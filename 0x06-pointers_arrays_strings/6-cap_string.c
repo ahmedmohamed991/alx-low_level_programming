@@ -2,36 +2,36 @@
 
 /**
  * cap_string - Capitalizes all words of a string.
- * @a: The string to be capitalized.
+ * @str: The string to be capitalized.
  *
  * Return: A pointer to the changed string.
  */
-char *cap_string(char *a)
+char *cap_string(char *str)
 {
-	int h = 0;
+	int index = 0;
 
-	while (a[h])
+	while (str[index])
 	{
-		while (!(a[h] >= 'a' && a[h] <= 'z'))
-			h++;
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
 
-		if (a[h - 1] == ' ' ||
-		    a[h - 1] == '\t' ||
-		    a[h - 1] == '\n' ||
-		    a[h - 1] == ',' ||
-		    a[h - 1] == ';' ||
-		    a[h - 1] == '.' ||
-		    a[h - 1] == '!' ||
-		    a[h - 1] == '?' ||
-		    a[h - 1] == '"' ||
-		    a[h - 1] == '(' ||
-		    a[h - 1] == ')' ||
-		    a[h - 1] == '{' ||
-		    a[h - 1] == '}' ||
-		    h == 0)
-			a[h] -= 32;
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
 
-		h++;
+		index++;
 	}
 
-	return (a);
+	return (str);
