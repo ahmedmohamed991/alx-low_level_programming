@@ -36,7 +36,7 @@ int count_word(char *s)
  */
 char **strtow(char *str)
 {
-	char **ahmed, *y;
+	char **m, *y;
 	int i, k = 0, len = 0, words, c = 0, start, end;
 
 	while (*(str + len))
@@ -45,8 +45,8 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	ahmed = (char **) malloc(sizeof(char *) * (words + 1));
-	if (ahmed == NULL)
+	m = (char **) malloc(sizeof(char *) * (words + 1));
+	if (m == NULL)
 		return (NULL);
 
 	for (i = 0; i <= len; i++)
@@ -61,8 +61,8 @@ char **strtow(char *str)
 					return (NULL);
 				while (start < end)
 					*y++ = str[start++];
-				*tmp = '\0';
-				ahmed[k] = tmp - c;
+				*y = '\0';
+				m[k] = y - c;
 				k++;
 				c = 0;
 			}
@@ -71,7 +71,7 @@ char **strtow(char *str)
 			start = i;
 	}
 
-	ahmed[k] = NULL;
+	m[k] = NULL;
 
-	return (ahmed);
+	return (m);
 }
