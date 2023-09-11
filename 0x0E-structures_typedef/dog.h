@@ -9,7 +9,8 @@
 *
 * Description: just alon dog struct in a big kitty world
 */
-struct dog {
+struct dog
+{
 	char *name;
 	float age;
 	char *owner;
